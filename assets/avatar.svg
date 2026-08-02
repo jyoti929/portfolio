@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#d946ef" />
+    </linearGradient>
+    <linearGradient id="avatarSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffdbac" />
+      <stop offset="100%" stop-color="#f1c27d" />
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#312e81" />
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Circle with Glow -->
+  <circle cx="200" cy="200" r="180" fill="url(#bgGrad)" opacity="0.15" />
+  <circle cx="200" cy="200" r="160" fill="url(#bgGrad)" />
+
+  <!-- Abstract Code Background Elements -->
+  <text x="50" y="100" font-family="monospace" font-size="18" fill="#ffffff" opacity="0.3">&lt;developer/&gt;</text>
+  <text x="270" y="320" font-family="monospace" font-size="18" fill="#ffffff" opacity="0.3">{ code }</text>
+
+  <!-- Shoulders & Body -->
+  <path d="M 100 370 C 100 280, 300 280, 300 370 Z" fill="url(#shirtGrad)" />
+  <path d="M 165 290 L 200 330 L 235 290 Z" fill="#ffffff" opacity="0.9" />
+
+  <!-- Neck -->
+  <rect x="175" y="220" width="50" height="60" rx="10" fill="url(#avatarSkin)" />
+
+  <!-- Head -->
+  <ellipse cx="200" cy="180" rx="55" ry="70" fill="url(#avatarSkin)" />
+
+  <!-- Hair -->
+  <path d="M 140 170 C 135 110, 170 90, 200 90 C 240 90, 265 110, 260 170 C 250 140, 230 110, 200 110 C 170 110, 150 140, 140 170 Z" fill="url(#hairGrad)" />
+
+  <!-- Glasses -->
+  <rect x="155" y="160" width="38" height="26" rx="6" fill="none" stroke="#38bdf8" stroke-width="4" />
+  <rect x="207" y="160" width="38" height="26" rx="6" fill="none" stroke="#38bdf8" stroke-width="4" />
+  <line x1="193" y1="173" x2="207" y2="173" stroke="#38bdf8" stroke-width="4" />
+
+  <!-- Eyes -->
+  <circle cx="174" cy="173" r="5" fill="#1e1b4b" />
+  <circle cx="226" cy="173" r="5" fill="#1e1b4b" />
+  <circle cx="176" cy="171" r="1.5" fill="#ffffff" />
+  <circle cx="228" cy="171" r="1.5" fill="#ffffff" />
+
+  <!-- Smile -->
+  <path d="M 182 215 Q 200 230 218 215" fill="none" stroke="#8b4513" stroke-width="3.5" stroke-linecap="round" />
+
+  <!-- Floating Badge Icons -->
+  <g transform="translate(40, 220)">
+    <rect width="60" height="60" rx="15" fill="#ffffff" opacity="0.9" />
+    <text x="30" y="38" font-family="sans-serif" font-weight="bold" font-size="22" fill="#6366f1" text-anchor="middle">JS</text>
+  </g>
+  <g transform="translate(300, 130)">
+    <rect width="60" height="60" rx="15" fill="#ffffff" opacity="0.9" />
+    <text x="30" y="38" font-family="sans-serif" font-weight="bold" font-size="20" fill="#06b6d4" text-anchor="middle">RN</text>
+  </g>
+</svg>

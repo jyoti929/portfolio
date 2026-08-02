@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jyoti Prasad — React Native & Full Stack Software Developer Portfolio. Crafting modern, high-performance mobile and web applications.">
+  <meta name="keywords" content="Jyoti Prasad, React Native Developer, Software Engineer, Portfolio, Full Stack, Expo, Firebase, JavaScript, Web Developer">
+  <meta name="author" content="Jyoti Prasad">
+  <title>Jyoti Prasad — React Native & Full Stack Developer</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Style Sheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glowing Orbs Background -->
+  <div class="bg-ambient">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
+
+  <!-- Sticky Glass Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-dot"></span>
+        <span class="gradient-text">JYOTI.DEV</span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active" data-nav="home">Home</a>
+        <a href="#about" class="nav-link" data-nav="about">About</a>
+        <a href="#skills" class="nav-link" data-nav="skills">Skills</a>
+        <a href="#projects" class="nav-link" data-nav="projects">Projects</a>
+        <a href="#resume" class="nav-link" data-nav="resume">Resume</a>
+        <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark/Light Theme" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#resume" class="nav-link">Resume</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main Content Wrapper -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-info">
+            <div class="status-badge">
+              <span class="pulse-dot"></span>
+              <span>Available for new opportunities</span>
+            </div>
+            
+            <h2 class="hero-greeting">Hello, I'm</h2>
+            <h1 class="hero-title gradient-text">Jyoti Prasad</h1>
+            
+            <div class="typing-container">
+              <span>I build </span>
+              <span id="typedText" class="typed-text"></span>
+              <span class="typing-cursor"></span>
+            </div>
+
+            <p class="hero-bio">
+              React Native &amp; Full-Stack Developer specializing in building high-performance cross-platform mobile apps, reactive web interfaces, and scalable RESTful APIs.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">
+                <span>View Projects</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="assets/resume.pdf" download="Jyoti_Prasad_Resume.pdf" class="btn btn-secondary">
+                <i class="fa-solid fa-download"></i>
+                <span>Download CV</span>
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat-item">
+                <h4 data-count="3">3+</h4>
+                <p>Shipped Apps</p>
+              </div>
+              <div class="stat-item">
+                <h4 data-count="8.06">8.06</h4>
+                <p>MCA SPI</p>
+              </div>
+              <div class="stat-item">
+                <h4 data-count="20">20+</h4>
+                <p>Tech Skills</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-avatar-wrapper">
+            <div class="avatar-frame">
+              <div class="avatar-img-box">
+                <img src="assets/profile.jpg" alt="Jyoti Prasad Avatar">
+              </div>
+            </div>
+            <div class="floating-badge badge-1">
+              <i class="fa-brands fa-react"></i>
+              <span>React Native</span>
+            </div>
+            <div class="floating-badge badge-2">
+              <i class="fa-solid fa-fire"></i>
+              <span>Firebase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">ABOUT ME</span>
+          <h2 class="section-title">Driven by Innovation &amp; Clean Code</h2>
+          <p class="section-desc">Transforming complex ideas into seamless digital experiences across mobile and web platforms.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-img-card glass-card">
+            <div class="about-img-box">
+              <img src="assets/profile.jpg" alt="Jyoti Prasad Profile">
+            </div>
+            <h3>Jyoti Prasad</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">Bhilai, Chhattisgarh, India</p>
+          </div>
+
+          <div class="about-content">
+            <h3 class="about-lead">
+              MCA Student &amp; Passionate Mobile Engineer turning raw concepts into production-ready software.
+            </h3>
+            <p class="about-text">
+              I specialize in end-to-end application development using modern frameworks like <strong>React Native, Expo, Node.js, and Firebase</strong>. Most recently, I developed <em>QuickCart</em>, a comprehensive grocery delivery application complete with a dedicated admin management portal. Additionally, my background includes AI/ML data annotation experience at Augtech NextWealth, providing deep insights into data pipelines and precision engineering.
+            </p>
+
+            <div class="strengths-grid">
+              <div class="strength-card glass-card">
+                <div class="strength-icon">
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+                <div class="strength-info">
+                  <h4>Cross-Platform</h4>
+                  <p>React Native &amp; Expo iOS/Android apps</p>
+                </div>
+              </div>
+
+              <div class="strength-card glass-card">
+                <div class="strength-icon">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <div class="strength-info">
+                  <h4>Backend &amp; Cloud</h4>
+                  <p>Firebase Auth, Firestore, RESTful APIs</p>
+                </div>
+              </div>
+
+              <div class="strength-card glass-card">
+                <div class="strength-icon">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="strength-info">
+                  <h4>Clean Architecture</h4>
+                  <p>Modular, readable, production-ready code</p>
+                </div>
+              </div>
+
+              <div class="strength-card glass-card">
+                <div class="strength-icon">
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div class="strength-info">
+                  <h4>Performance First</h4>
+                  <p>Optimized rendering &amp; responsive UI</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">MY SKILLS</span>
+          <h2 class="section-title">Technical Expertise &amp; Stack</h2>
+          <p class="section-desc">Technologies and tools I use to craft modern digital applications.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="tab-btn active" data-skill-filter="all">All Skills</button>
+          <button class="tab-btn" data-skill-filter="frontend">Frontend &amp; Mobile</button>
+          <button class="tab-btn" data-skill-filter="backend">Backend &amp; Database</button>
+          <button class="tab-btn" data-skill-filter="tools">Tools &amp; Workflow</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skillsGrid">
+
+          <!-- React Native -->
+          <div class="skill-card glass-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <i class="fa-brands fa-react skill-icon"></i>
+                <span class="skill-name">React Native &amp; Expo</span>
+              </div>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="90%"></div>
+            </div>
+          </div>
+
+          <!-- JavaScript / TypeScript -->
+          <div class="skill-card glass-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <i class="fa-brands fa-js skill-icon"></i>
+                <span class="skill-name">JavaScript (ES6+) / TypeScript</span>
+              </div>
+              <span class="skill-percent">88%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="88%"></div>
+            </div>
+          </div>
+
+          <!-- Firebase & Firestore -->
+          <div class="skill-card glass-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <i class="fa-solid fa-fire skill-icon"></i>
+                <span class="skill-name">Firebase Auth &amp; Firestore</span>
+              </div>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="85%"></div>
+            </div>
+          </div>
+
+          <!-- Node.js & REST APIs -->
+          <div class="skill-card glass-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <i class="fa-brands fa-node-js skill-icon"></i>
+                <span class="skill-name">Node.js &amp; Express REST APIs</span>
+              </div>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="80%"></div>
+            </div>
+          </div>
+
+          <!-- MongoDB -->
+          <div class="skill-card glass-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <i class="fa-solid fa-database skill-icon"></i>
+                <span class="skill-name">MongoDB &amp; SQL</span>
+              </div>
+              <span class="skill-percent">78%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="78%"></div>
+            </div>
+          </div>
+
+          <!-- HTML5 & CSS3 -->
+          <div class="skill-card glass-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <i class="fa-brands fa-html5 skill-icon"></i>
+                <span class="skill-name">HTML5 / Responsive CSS3</span>
+              </div>
+              <span class="skill-percent">92%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="92%"></div>
+            </div>
+          </div>
+
+          <!-- Git & GitHub -->
+          <div class="skill-card glass-card" data-category="tools">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <i class="fa-brands fa-git-alt skill-icon"></i>
+                <span class="skill-name">Git &amp; GitHub Version Control</span>
+              </div>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="85%"></div>
+            </div>
+          </div>
+
+          <!-- Developer Tools -->
+          <div class="skill-card glass-card" data-category="tools">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <i class="fa-solid fa-screwdriver-wrench skill-icon"></i>
+                <span class="skill-name">VS Code / Postman / Android Studio</span>
+              </div>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="85%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">PORTFOLIO</span>
+          <h2 class="section-title">Selected Projects</h2>
+          <p class="section-desc">Explore some of my recent mobile applications, web platforms, and software solutions.</p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="filter-tabs">
+          <button class="tab-btn active" data-project-filter="all">All</button>
+          <button class="tab-btn" data-project-filter="mobile">Mobile Apps</button>
+          <button class="tab-btn" data-project-filter="fullstack">Full Stack</button>
+          <button class="tab-btn" data-project-filter="web">Web &amp; ML</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1: QuickCart -->
+          <div class="project-card glass-card" data-project-category="mobile">
+            <div class="project-img-wrapper">
+              <img src="assets/project1.svg" alt="QuickCart App Preview">
+              <div class="project-overlay">
+                <a href="https://github.com/jyoti929/quickStart" target="_blank" rel="noopener" class="overlay-btn" title="View Source Code">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <button class="overlay-btn open-modal-btn" data-project-id="quickcart" title="View Project Details">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">QuickCart — Grocery Delivery App</h3>
+              <p class="project-desc">
+                Full-featured cross-platform grocery ordering mobile application integrated with real-time Firestore database and dedicated admin portal.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Expo</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Firestore</span>
+              </div>
+
+              <div class="project-footer">
+                <span class="project-detail-link open-modal-btn" data-project-id="quickcart">
+                  <span>Case Study</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+                <a href="https://github.com/jyoti929/quickStart" target="_blank" rel="noopener" style="font-size: 1.1rem; color: var(--text-secondary);" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: InAppCode -->
+          <div class="project-card glass-card" data-project-category="mobile">
+            <div class="project-img-wrapper">
+              <img src="assets/project2.svg" alt="InAppCode Preview">
+              <div class="project-overlay">
+                <a href="https://github.com/jyoti929" target="_blank" rel="noopener" class="overlay-btn" title="View Code">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <button class="overlay-btn open-modal-btn" data-project-id="inappcode" title="View Project Details">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">InAppCode — Mobile Coding IDE</h3>
+              <p class="project-desc">
+                Interactive mobile code challenge application allowing users to solve programming problems directly on their mobile devices.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+
+              <div class="project-footer">
+                <span class="project-detail-link open-modal-btn" data-project-id="inappcode">
+                  <span>Case Study</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+                <a href="https://github.com/jyoti929" target="_blank" rel="noopener" style="font-size: 1.1rem; color: var(--text-secondary);" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Disease Prediction -->
+          <div class="project-card glass-card" data-project-category="fullstack">
+            <div class="project-img-wrapper">
+              <img src="assets/project3.svg" alt="Disease Prediction Preview">
+              <div class="project-overlay">
+                <a href="https://github.com/jyoti929" target="_blank" rel="noopener" class="overlay-btn" title="View Code">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <button class="overlay-btn open-modal-btn" data-project-id="disease" title="View Project Details">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Disease Prediction Engine</h3>
+              <p class="project-desc">
+                Machine-learning driven healthcare web application offering symptom-based health predictions and automated risk assessment.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+
+              <div class="project-footer">
+                <span class="project-detail-link open-modal-btn" data-project-id="disease">
+                  <span>Case Study</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+                <a href="https://github.com/jyoti929" target="_blank" rel="noopener" style="font-size: 1.1rem; color: var(--text-secondary);" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: DevPulse Analytics -->
+          <div class="project-card glass-card" data-project-category="web">
+            <div class="project-img-wrapper">
+              <img src="assets/project4.svg" alt="DevPulse Analytics Preview">
+              <div class="project-overlay">
+                <a href="https://github.com/jyoti929" target="_blank" rel="noopener" class="overlay-btn" title="View Code">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <button class="overlay-btn open-modal-btn" data-project-id="devpulse" title="View Project Details">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">DevPulse — AI Annotation Dashboard</h3>
+              <p class="project-desc">
+                Real-time data pipeline &amp; annotation quality tracking dashboard designed for ML model training and data compliance monitoring.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Chart.js</span>
+                <span class="tech-tag">HTML5/CSS3</span>
+              </div>
+
+              <div class="project-footer">
+                <span class="project-detail-link open-modal-btn" data-project-id="devpulse">
+                  <span>Case Study</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+                <a href="https://github.com/jyoti929" target="_blank" rel="noopener" style="font-size: 1.1rem; color: var(--text-secondary);" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume & Education Section -->
+    <section class="section" id="resume">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">CAREER PATH</span>
+          <h2 class="section-title">Education &amp; Experience</h2>
+          <p class="section-desc">My academic background, work experience, and professional certifications.</p>
+        </div>
+
+        <div class="resume-layout">
+          <!-- Experience Column -->
+          <div class="timeline-column">
+            <h3 class="timeline-column-title">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Experience</span>
+            </h3>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-card glass-card">
+                  <div class="timeline-date">FEB 2026 — MAY 2026</div>
+                  <h4 class="timeline-role">Process Executive Intern (AI/ML Data)</h4>
+                  <div class="timeline-org">Augtech NextWealth IT Services Pvt. Ltd.</div>
+                  <ul class="timeline-desc">
+                    <li>Executed data annotation workflows for AI/ML dataset preparation.</li>
+                    <li>Ensured strict data quality checks, privacy compliance, and error auditing.</li>
+                    <li>Collaborated across engineering teams to refine machine learning training data.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Column -->
+          <div class="timeline-column">
+            <h3 class="timeline-column-title">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Education</span>
+            </h3>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-card glass-card">
+                  <div class="timeline-date">2024 — 2026</div>
+                  <h4 class="timeline-role">Master of Computer Applications (MCA)</h4>
+                  <div class="timeline-org">RSR Rungta College of Engineering &amp; Technology</div>
+                  <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 8px;">3rd Semester — Current SPI: <strong>8.06</strong></p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-card glass-card">
+                  <div class="timeline-date">2021 — 2024</div>
+                  <h4 class="timeline-role">Bachelor of Computer Applications (BCA)</h4>
+                  <div class="timeline-org">Sai College</div>
+                  <p style="font-size: 0.9rem; color: var(--text-secondary);">Graduated with <strong>73.90%</strong> aggregate.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download Resume Card CTA -->
+        <div class="resume-download-cta glass-card">
+          <h3>Interested in my complete profile?</h3>
+          <p>Download my updated resume to view detailed academic marks, skills matrix, and project documentation.</p>
+          <a href="assets/resume.pdf" download="Jyoti_Prasad_Resume.pdf" class="btn btn-primary">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span>Download Official Resume</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">GET IN TOUCH</span>
+          <h2 class="section-title">Let's Work Together</h2>
+          <p class="section-desc">Have a project in mind, a job opportunity, or just want to connect? Send me a message!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Column -->
+          <div class="contact-info-wrapper">
+            <div class="contact-info-card glass-card">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email Address</h4>
+                <p>jyotiprasad6004@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card glass-card">
+              <div class="contact-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Phone Number</h4>
+                <p>+91 9522870058</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card glass-card">
+              <div class="contact-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Location</h4>
+                <p>Bhilai, Chhattisgarh, India</p>
+              </div>
+            </div>
+
+            <!-- Social Links Card -->
+            <div class="contact-info-card glass-card" style="flex-direction: column; align-items: flex-start;">
+              <h4 style="font-family: var(--font-code); font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Connect on Socials</h4>
+              <div class="social-links">
+                <a href="https://github.com/jyoti929" target="_blank" rel="noopener" class="social-icon-btn" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon-btn" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:jyotiprasad6004@gmail.com" class="social-icon-btn" title="Send Email">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon-btn" title="Twitter/X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="contact-form-card glass-card">
+            <form id="contactForm" novalidate>
+              <div class="form-group" id="nameGroup">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="e.g. John Doe" required>
+                <span class="form-error-text" id="nameError">Please enter a valid name (at least 2 characters).</span>
+              </div>
+
+              <div class="form-group" id="emailGroup">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="e.g. john@example.com" required>
+                <span class="form-error-text" id="emailError">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group" id="subjectGroup">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Inquiry / Job Offer">
+              </div>
+
+              <div class="form-group" id="messageGroup">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or inquiry..." maxlength="500" required></textarea>
+                <div class="char-counter"><span id="charCount">0</span>/500 characters</div>
+                <span class="form-error-text" id="messageError">Please enter a message (at least 10 characters).</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="submitBtn" style="width: 100%;">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Project Details Modal -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-card glass-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-img-wrapper">
+        <img id="modalImg" src="" alt="Project Preview">
+      </div>
+
+      <h2 class="modal-title" id="modalTitle">Project Title</h2>
+      <p class="modal-body-text" id="modalDesc">Detailed description of the project.</p>
+
+      <div class="modal-features">
+        <h4>Key Features &amp; Architecture</h4>
+        <ul id="modalFeaturesList">
+          <!-- Dynamically filled via JS -->
+        </ul>
+      </div>
+
+      <div class="modal-actions">
+        <a id="modalGithubLink" href="#" target="_blank" rel="noopener" class="btn btn-secondary">
+          <i class="fa-brands fa-github"></i>
+          <span>View Source Code</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Floating Scroll-To-Top Button -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top" title="Scroll to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="currentYear">2026</span> Jyoti Prasad. Designed &amp; Developed with HTML5, CSS3 &amp; JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
