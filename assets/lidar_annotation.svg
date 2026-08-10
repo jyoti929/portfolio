@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lidarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="gridGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="600" height="400" rx="16" fill="url(#lidarBg)" />
+
+  <!-- Frame Header -->
+  <rect x="50" y="40" width="500" height="320" rx="12" fill="#090d16" stroke="#334155" stroke-width="1.5" />
+  <rect x="50" y="40" width="500" height="36" rx="12" fill="#1e293b" />
+  <circle cx="75" cy="58" r="4" fill="#ef4444" />
+  <circle cx="88" cy="58" r="4" fill="#f59e0b" />
+  <circle cx="101" cy="58" r="4" fill="#10b981" />
+  <text x="300" y="62" font-family="sans-serif" font-weight="bold" font-size="12" fill="#38bdf8" text-anchor="middle">3D LiDAR Point Cloud Dataset Annotation</text>
+
+  <!-- 3D Grid Perspective Lines -->
+  <path d="M 100 320 L 300 160 L 500 320 Z" fill="url(#gridGrad)" stroke="#0284c7" stroke-opacity="0.4" stroke-width="1" />
+  <line x1="300" y1="160" x2="300" y2="320" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="4 4" />
+  <line x1="200" y1="240" x2="400" y2="240" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="4 4" />
+  <line x1="150" y1="280" x2="450" y2="280" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1" opacity="0.5" />
+
+  <!-- LiDAR Point Cloud Dots (Simulated Sensors) -->
+  <g fill="#06b6d4" opacity="0.7">
+    <circle cx="280" cy="180" r="2" /><circle cx="295" cy="175" r="1.5" /><circle cx="310" cy="182" r="2" />
+    <circle cx="260" cy="200" r="1.5" /><circle cx="320" cy="198" r="2" /><circle cx="340" cy="210" r="1.5" />
+    <circle cx="220" cy="230" r="2" /><circle cx="240" cy="225" r="1.5" /><circle cx="360" cy="235" r="2" />
+    <circle cx="180" cy="270" r="2" /><circle cx="210" cy="265" r="1.5" /><circle cx="390" cy="270" r="2" />
+  </g>
+
+  <!-- 3D Bounding Box 1 (Vehicle Tagged in Point Cloud) -->
+  <!-- Back Face -->
+  <polygon points="230,200 290,190 290,230 230,240" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="2 2" />
+  <!-- Front Face -->
+  <polygon points="210,215 270,205 270,250 210,260" fill="#a855f7" fill-opacity="0.15" stroke="#c084fc" stroke-width="2" />
+  <!-- Connecting Edges -->
+  <line x1="230" y1="200" x2="210" y2="215" stroke="#c084fc" stroke-width="1.5" />
+  <line x1="290" y1="190" x2="270" y2="205" stroke="#c084fc" stroke-width="1.5" />
+  <line x1="290" y1="230" x2="270" y2="250" stroke="#c084fc" stroke-width="1.5" />
+  <line x1="230" y1="240" x2="210" y2="260" stroke="#c084fc" stroke-width="1.5" />
+  <!-- Label Tag -->
+  <rect x="210" y="195" width="75" height="16" rx="3" fill="#8b5cf6" />
+  <text x="247" y="207" font-family="sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">Car [98.4%]</text>
+
+  <!-- 3D Bounding Box 2 (Pedestrian Tagged) -->
+  <polygon points="350,210 380,205 380,255 350,260" fill="#10b981" fill-opacity="0.15" stroke="#34d399" stroke-width="2" />
+  <rect x="345" y="193" width="60" height="15" rx="3" fill="#059669" />
+  <text x="375" y="204" font-family="sans-serif" font-size="8" font-weight="bold" fill="#ffffff" text-anchor="middle">Pedestrian</text>
+
+  <!-- Annotation HUD Stats Overlay -->
+  <rect x="70" y="90" width="160" height="60" rx="6" fill="#1e293b" fill-opacity="0.9" stroke="#334155" />
+  <text x="80" y="110" font-family="sans-serif" font-size="10" font-weight="bold" fill="#94a3b8">Annotation Mode</text>
+  <text x="80" y="127" font-family="sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">3D LiDAR Point Cloud</text>
+  <text x="80" y="141" font-family="sans-serif" font-size="9" fill="#10b981">✓ Spatial Quality Verified</text>
+
+  <rect x="370" y="90" width="160" height="60" rx="6" fill="#1e293b" fill-opacity="0.9" stroke="#334155" />
+  <text x="380" y="110" font-family="sans-serif" font-size="10" font-weight="bold" fill="#94a3b8">Tools &amp; Categories</text>
+  <text x="380" y="127" font-family="sans-serif" font-size="10" fill="#f472b6">• Bounding Box (3D)</text>
+  <text x="380" y="141" font-family="sans-serif" font-size="10" fill="#c084fc">• Object Detection &amp; Tagging</text>
+</svg>

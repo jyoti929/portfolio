@@ -130,42 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach(section => navObserver.observe(section));
 
   /* ==========================================================================
-     4. Animated Skills Progress Bars
+     4. Skills Filter Tabs
      ========================================================================== */
   const skillCards = document.querySelectorAll('.skill-card');
-
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const fillBar = entry.target.querySelector('.progress-bar-fill');
-        const percentText = entry.target.querySelector('.skill-percent');
-        const targetPercent = fillBar.getAttribute('data-progress');
-        
-        fillBar.style.width = targetPercent;
-        
-        // Counter animation
-        let count = 0;
-        const targetNum = parseInt(targetPercent);
-        const duration = 1200;
-        const stepTime = Math.abs(Math.floor(duration / targetNum));
-        
-        const counterTimer = setInterval(() => {
-          count++;
-          percentText.textContent = `${count}%`;
-          if (count >= targetNum) {
-            clearInterval(counterTimer);
-          }
-        }, stepTime);
-
-        skillObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  skillCards.forEach(card => skillObserver.observe(card));
-
-  /* Skills Filter Tabs */
   const skillFilterBtns = document.querySelectorAll('[data-skill-filter]');
+
   skillFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       skillFilterBtns.forEach(b => b.classList.remove('active'));
@@ -174,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const filter = btn.getAttribute('data-skill-filter');
       skillCards.forEach(card => {
         if (filter === 'all' || card.getAttribute('data-category') === filter) {
-          card.style.display = 'block';
+          card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
@@ -195,7 +164,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const filter = btn.getAttribute('data-project-filter');
       projectCards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-project-category') === filter) {
+        const cat = card.getAttribute('data-project-category');
+        if (
+          filter === 'all' || 
+          cat === filter || 
+          (filter === 'development' && cat !== 'annotation')
+        ) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
@@ -242,17 +216,30 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       github: 'https://github.com/jyoti929'
     },
-    devpulse: {
-      title: 'DevPulse — AI Annotation & Analytics Dashboard',
+    blogify: {
+      title: 'Blogify – Full-Stack Blog Web Application',
       img: 'assets/project4.svg',
-      desc: 'DevPulse is a real-time data analytics dashboard designed for monitoring AI/ML data annotation pipelines, audit compliance metrics, and annotator productivity rates.',
+      desc: 'A responsive full-stack blog platform where users can register, log in, create, edit, delete, and manage blog posts through a personalized dashboard.',
       features: [
-        'Interactive charts rendering quality metrics & throughput rates',
-        'Data privacy auditing tools following international compliance standards',
-        'Lightweight, responsive frontend built with modern ES6 JavaScript & CSS3',
-        'Custom export and reporting features'
+        'User Registration & Login Authentication (JWT)',
+        'Create, Edit, and Delete Blog Posts (CRUD)',
+        'Personalized Blog Dashboard & User Profile',
+        'Blog Categories, Search & Filter Functionality',
+        'Newsletter Subscription & Fully Responsive UI'
       ],
-      github: 'https://github.com/jyoti929'
+      github: 'https://github.com/jyoti929/Blog_app',
+      demo: 'https://6a78931adad05a19dec58d56--starlit-bunny-060e4c.netlify.app/'
+    },
+    lidar_annotation: {
+      title: '3D Data Annotation – LiDAR',
+      img: 'assets/lidar_annotation.svg',
+      desc: 'Worked on 3D data annotation and LiDAR-based annotation tasks for machine learning and autonomous driving datasets, focusing on accurate object labeling and data quality.',
+      features: [
+        '3D Data Annotation & LiDAR Annotation for Point Cloud Data',
+        'Precision 3D Bounding Box Tagging & Object Detection',
+        'Data Labeling for Autonomous Driving Datasets',
+        'Spatial Data Quality Checking & Audit Compliance'
+      ]
     }
   };
 
@@ -263,6 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalDesc = document.getElementById('modalDesc');
   const modalFeaturesList = document.getElementById('modalFeaturesList');
   const modalGithubLink = document.getElementById('modalGithubLink');
+  const modalDemoLink = document.getElementById('modalDemoLink');
 
   document.querySelectorAll('.open-modal-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -274,7 +262,20 @@ document.addEventListener('DOMContentLoaded', () => {
         modalImg.src = data.img;
         modalTitle.textContent = data.title;
         modalDesc.textContent = data.desc;
-        modalGithubLink.href = data.github;
+
+        if (data.github) {
+          modalGithubLink.href = data.github;
+          modalGithubLink.style.display = 'inline-flex';
+        } else {
+          modalGithubLink.style.display = 'none';
+        }
+
+        if (data.demo) {
+          modalDemoLink.href = data.demo;
+          modalDemoLink.style.display = 'inline-flex';
+        } else {
+          modalDemoLink.style.display = 'none';
+        }
 
         modalFeaturesList.innerHTML = '';
         data.features.forEach(feat => {
@@ -305,76 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
     projectModal.classList.remove('open');
   }
 
-  /* ==========================================================================
-     6. Contact Form Validation & Character Counter
-     ========================================================================== */
-  const contactForm = document.getElementById('contactForm');
-  const messageInput = document.getElementById('message');
-  const charCount = document.getElementById('charCount');
-  const submitBtn = document.getElementById('submitBtn');
 
-  // Live Character Counter
-  if (messageInput && charCount) {
-    messageInput.addEventListener('input', () => {
-      charCount.textContent = messageInput.value.length;
-    });
-  }
-
-  // Form Validation & Handling
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const nameInput = document.getElementById('name');
-      const emailInput = document.getElementById('email');
-      const nameGroup = document.getElementById('nameGroup');
-      const emailGroup = document.getElementById('emailGroup');
-      const messageGroup = document.getElementById('messageGroup');
-
-      let isValid = true;
-
-      // Validate Name
-      if (nameInput.value.trim().length < 2) {
-        nameGroup.classList.add('error');
-        isValid = false;
-      } else {
-        nameGroup.classList.remove('error');
-      }
-
-      // Validate Email
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(emailInput.value.trim())) {
-        emailGroup.classList.add('error');
-        isValid = false;
-      } else {
-        emailGroup.classList.remove('error');
-      }
-
-      // Validate Message
-      if (messageInput.value.trim().length < 10) {
-        messageGroup.classList.add('error');
-        isValid = false;
-      } else {
-        messageGroup.classList.remove('error');
-      }
-
-      if (isValid) {
-        // Show loading state
-        const originalBtnText = submitBtn.innerHTML;
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...`;
-
-        setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnText;
-          contactForm.reset();
-          charCount.textContent = '0';
-          
-          showToast('Message sent successfully! I will get back to you soon.', 'fa-solid fa-circle-check');
-        }, 1200);
-      }
-    });
-  }
 
   /* ==========================================================================
      7. Toast Notification System
